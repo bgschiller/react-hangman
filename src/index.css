@@ -3,3 +3,142 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+* {
+    box-sizing: border-box;
+}
+.word {
+    margin-top: 15px;
+}
+span.letter {
+    width: 25px;
+    height: 27px;
+    display: inline-block;
+    margin-right: 5px;
+    padding: 4px;
+    border-bottom: 2px solid #444;
+    vertical-align: middle;
+    text-align: center;
+}
+.Guy {
+    position: relative;
+    margin: 0 auto;
+    height: 300px;
+    width: 300px;
+    border-bottom: 1px solid #cec3aa;
+}
+
+.Guy .head {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    border: 4px solid #444;
+    position: absolute;
+    top: 50px;
+    left: 125px;
+}
+.Guy .body {
+    height: 77px;
+    border-left: 6px solid #444;
+    position: absolute;
+    left: 147px;
+    top: 100px;
+}
+.Guy .left-arm {
+    height: 50px;
+    border-left: 4px solid #444;
+    position: absolute;
+    right: 170px;
+    top: 100px;
+    transform: rotate(60deg);
+}
+.Guy .right-arm {
+    height: 50px;
+    border-left: 4px solid #444;
+    position: absolute;
+    left: 170px;
+    top: 100px;
+    transform: rotate(120deg);
+
+}
+.Guy .left-leg {
+    height: 80px;
+    border-left: 5px solid #444;
+    position: absolute;
+    right: 169px;
+    top: 169px;
+    transform: rotate(-150deg);
+}
+.Guy .right-leg {
+    height: 80px;
+    border-left: 5px solid #444;
+    position: absolute;
+    left: 169px;
+    top: 169px;
+    transform: rotate(150deg);
+}
+.Guy .pole-v {
+    position: absolute;
+    left: 15px;
+    background: #675932;
+    height: 280px;
+    bottom: 0;
+    width: 15px;
+}
+.Guy .pole-h {
+    position: absolute;
+    left: 0;
+    background: #675932;
+    height: 15px;
+    top: 20px;
+    width: 180px;
+}
+.Guy .noose {
+    position: absolute;
+    left: 150px;
+    background: #675932;
+    height: 56px;
+    bottom: 0;
+    width: 2px;
+    top: 30px;
+}
+.Guy .noose:after {
+    content: '';
+    height: 20px;
+    width: 20px;
+    border-radius: 4px 15px;
+    left: -9px;
+    display: block;
+    position: absolute;
+    top: 57px;
+    border: 2px solid #675932;
+    transform: rotate(45deg);
+}
+.Guy .pole-h:before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 20px;
+    width: 5px;
+    height: 25px;
+    background: yellow;
+    display: block;
+    transform: rotate(45deg);
+}
+.Guy .pole-h:after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 20px;
+    width: 5px;
+    height: 25px;
+    background: yellow;
+    display: block;
+    transform: rotate(-45deg);
+
+}
+.guess {
+    padding: 10px;
+    float: left;
+    margin: 0;
+
+}
