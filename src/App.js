@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Guy from './components/Guy'
-import Word from './components/Word'
-import Guesses from './components/Guesses'
-import NewGuess from './components/NewGuess'
+import Game from './components/Game'
 
 class App extends Component {
   render() {
@@ -15,16 +12,7 @@ class App extends Component {
             <h2>Welcome to React-Hangman!</h2>
         </div>
         <div className="container">
-            <div className="row">
-                <div className="col-sm-9">
-                    <Guy {...this.props}/>
-                    <Word puzzle={this.props.puzzle}/>
-                    <NewGuess />
-                </div>
-                <div className="col-sm-3">
-                    <Guesses guesses={this.props.guessed_letters}/>
-                </div>
-            </div>
+            <Game {...this.props} />
         </div>
       </div>
     );

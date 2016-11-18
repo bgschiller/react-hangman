@@ -5,7 +5,7 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 var initialState = {
-    guessed_letters: ['A', 'E', 'W', 'R', 'S', 'T'],
+    guessed_letters: ['A', 'E', '2', 'W', 'R', 'G', 'F'],
     puzzle: '  EA E ',
 }
 ReactDOM.render(
