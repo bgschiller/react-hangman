@@ -5,7 +5,7 @@ class Guy extends Component {
         return (
             <div className="word">
                 {
-                    this.props.puzzle.split('').map(
+                    this.props.word_so_far.map(
                         (letter, index) =>
                             <span className="letter" key={index}>{letter}</span>
                     )

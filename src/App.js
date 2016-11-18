@@ -12,7 +12,7 @@ class App extends Component {
             <h2>Welcome to React-Hangman!</h2>
         </div>
         <div className="container">
-            <Game {...this.props} />
+            <Game/>
         </div>
       </div>
     );

@@ -1,24 +1,25 @@
-import React, { Component } from 'react';
-import Guy from './Guy'
-import Word from './Word'
-import Guesses from './Guesses'
-import NewGuess from './NewGuess'
+import { connect } from 'react-redux'
+import { makeGuess, newGame } from '../actions'
+import PresentationGame from './PresentationGame'
 
-class Game extends Component {
-    render() {
-        return (
-            <div className="row">
-                <div className="col-sm-9">
-                    <Guy {...this.props}/>
-                    <Word puzzle={this.props.puzzle}/>
-                    <NewGuess />
-                </div>
-                <div className="col-sm-3">
-                    <Guesses guesses={this.props.guessed_letters}/>
-                </div>
-            </div>
-        )
-    }
+const mapStateToProps = (state) => {
+  return state
 }
 
-export default Game;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onGuess: (letter) => {
+      dispatch(makeGuess(letter))
+    },
+    requestPuzzle: () => {
+      dispatch(newGame())
+    }
+  }
+}
+
+const Game = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(PresentationGame)
+
+export default Game

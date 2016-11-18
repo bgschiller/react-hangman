@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import _ from 'underscore';
 class Guy extends Component {
     render() {
-        var {guessed_letters, puzzle} = this.props
+        var {guesses, word_so_far} = this.props
         var possibleElements = [
             (<div className="head" key="head" />),
             (<div className="body" key="body" />),
@@ -11,7 +11,7 @@ class Guy extends Component {
             (<div className="left-leg" key="left-leg" />),
             (<div className="right-leg" key="right-leg" />)
         ]
-        var diff = _.difference(guessed_letters, puzzle.split(''))
+        var diff = _.difference(guesses, word_so_far)
         return (
             <div className="Guy">
                 <div className="pole-v" />

@@ -1,28 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class NewGuess extends Component {
-    handleChange(e) {
-        var value = e.target.value;
-        alert(value);
-    }
-    render() {
-        var letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        return (
-            <div className="new-guess">
-                <select type="text" onChange={this.handleChange} >
-                    <option>Pick A Letter</option>
-                    {
-                        letters.split('').map(
-                            (letter) => {
-                                console.log(letter);
-                                return <option value={letter} key={letter}>{letter}</option>
-                            }
-                        )
+const NewGuess = ({onGuess}) => {
+  var letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  return (
+      <div className="new-guess">
+          <select type="text" onChange={function(e) {
+              onGuess(e.target.value)
+            }} >
+              <option>Pick A Letter</option>
+              {
+                letters.split('').map(
+                    (letter) => {
+                        return <option value={letter} key={letter}>{letter}</option>
                     }
-                </select>
-            </div>
-        )
-    }
+                )
+              }
+          </select>
+      </div>
+  )
 }
 
 export default NewGuess;
