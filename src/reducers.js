@@ -7,7 +7,7 @@ const initialState = {
 }
 
 export default function hangmanApp(state = initialState, action){
-  console.log({action, state})
+  console.log(action)
   switch (action.type) {
     case 'fetching_game':
       return {

@@ -1,7 +1,9 @@
+import {HANGMAN_API} from './constants'
+
 export function makeGuess(letter) {
   return (dispatch) => {
     dispatch(guessInProgress(letter))
-    var jsonPromise = fetch('https://flask-hangman-api.herokuapp.com/guess/' + letter, {
+    var jsonPromise = fetch(HANGMAN_API + '/guess/' + letter, {
       credentials: 'include'
     })
       .then(response => response.json())
@@ -61,7 +63,7 @@ function fetchingGame(){
 export function newGame() {
   return (dispatch) => {
     dispatch(fetchingGame())
-    fetch('https://flask-hangman-api.herokuapp.com/new_game', {
+    fetch(HANGMAN_API + '/new_game', {
       credentials: 'include'
     })
       .then(resp => resp.json())
