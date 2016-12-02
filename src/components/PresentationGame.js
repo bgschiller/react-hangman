@@ -2,12 +2,11 @@ import React, {Component, PropTypes} from 'react'
 import Guy from './Guy'
 import Word from './Word'
 import Guesses from './Guesses'
-import NewGuess from './NewGuess'
 
 class PresentationGame extends Component {
   render(){
     console.log('presentation game render')
-    var {puzzle, status, onGuess} = this.props
+    var {puzzle, guessesInProgress, status, onGuess} = this.props
     if (status !== 'unsolved' && status !== 'solved') {
       return (
         <div className="row">fetching...</div>
@@ -18,12 +17,13 @@ class PresentationGame extends Component {
           <div className="col-sm-9">
               <Guy {...puzzle} />
               <Word {...puzzle} />
-              <NewGuess
-                onGuess={onGuess}
-              />
           </div>
           <div className="col-sm-3">
-              <Guesses guesses={puzzle.guesses}/>
+              <Guesses
+                puzzle={puzzle}
+                onGuess={onGuess}
+                guessesInProgress={guessesInProgress}
+              />
           </div>
       </div>
     )
